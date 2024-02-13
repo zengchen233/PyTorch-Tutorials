@@ -21,11 +21,11 @@ class MyData(Dataset):
         return len(self.img_path)
 
 
-ants_dataset = MyData(root_dir='datasets/hymenoptera_data/train', label_dir='ants')
+ants_dataset = MyData(root_dir='../data/hymenoptera_data/train', label_dir='ants_image')
 img, label = ants_dataset[2]
 print(img, label)   # <PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=500x282 at 0x1F774B1C580> ants
 
-bee_dataset = MyData(root_dir='datasets/hymenoptera_data/train', label_dir='bees')
+bee_dataset = MyData(root_dir='../data/hymenoptera_data/train', label_dir='bees_image')
 img, label = bee_dataset[2]
 print(img, label)   # <PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=464x500 at 0x1F72BFA1CD0> bees
 

@@ -154,4 +154,7 @@ cython_debug/
 
 # 用户自定义
 .idea/
-/Dataset和Dataloader/datasets/
+/TensorBoard的使用/logs/
+/data/
+/DataLoader的使用/dataloader/
+/激活函数/data/

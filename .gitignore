@@ -158,3 +158,4 @@ cython_debug/
 /data/
 /DataLoader的使用/dataloader/
 /激活函数/data/
+/模型训练/model/

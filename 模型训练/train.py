@@ -12,7 +12,7 @@ test_data = torchvision.datasets.CIFAR10(root="../data", train=False, transform=
                                          download=True)
 train_data_size = len(train_data)
 test_data_size = len(test_data)
-print('训练数据集长度为:{0},测试数据集长度为:{1}'.format(train_data_size, test_data_size))
+# print('训练数据集长度为:{0},测试数据集长度为:{1}'.format(train_data_size, test_data_size))
 
 # 利用DataLoader加载数据集
 train_dataloader = DataLoader(train_data, batch_size=64)
@@ -29,7 +29,7 @@ optim = torch.optim.SGD(net.parameters(), lr=1e-2)
 # 设置训练网络的一些参数
 total_train_step = 0
 total_test_step = 0
-epoch = 50
+epoch = 100
 # 训练
 for i in tqdm(range(epoch)):
     print('------第{}轮训练开始------'.format(i + 1))
@@ -63,4 +63,5 @@ for i in tqdm(range(epoch)):
     print("整体数据集上的Loss:{}".format(total_test_loss))
     print("整体数据集上的正确率:{}".format(total_acc / test_data_size))
     total_test_step += 1
-    torch.save(net.state_dict(), "./model/CIFAR10_{}.pth".format(i))
+    if epoch % 100 == 0:
+        torch.save(net.state_dict(), "./model/CIFAR10_{}.pth".format(epoch))
